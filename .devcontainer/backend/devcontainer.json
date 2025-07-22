@@ -3,10 +3,6 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "postCreateCommand": "./gradlew build --no-daemon",
   "workspaceFolder": "/workspaces/my-app/backend",
   "customizations": {
     "vscode": {
@@ -16,6 +12,10 @@
         "vscjava.vscode-gradle"
       ]
     }
-  }
+  },
+  "postCreateCommand": "./scripts/init.sh",
+  "forwardPorts": [8080],
+  "mounts": [
+    "source=postgresql-data,target=/var/lib/postgresql/data,type=volume"
+  ]
 }
-
