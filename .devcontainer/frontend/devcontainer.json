@@ -3,17 +3,15 @@
   "build": {
     "dockerfile": "Dockerfile"
   },
-  "settings": {
-    "terminal.integrated.shell.linux": "/bin/bash"
-  },
-  "postCreateCommand": "flutter pub get",
-  "workspaceFolder": "/workspaces/my-app/frontend",
+  "workspaceFolder": "/workspaces/ApniNotes/frontend",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/ApniNotes,type=bind,consistency=cached",
   "customizations": {
     "vscode": {
       "extensions": [
-        "dart-code.dart-code",
-        "dart-code.flutter"
+        "dart-code.flutter",
+        "dart-code.dart-code"
       ]
     }
-  }
+  },
+  "postCreateCommand": "flutter pub get"
 }
