@@ -1,44 +1,36 @@
-# Miscellaneous
-*.class
-*.log
-*.pyc
-*.swp
-.DS_Store
-.atom/
-.buildlog/
-.history
-.svn/
-migrate_working_dir/
+import 'package:flutter/material.dart';
 
-# IntelliJ related
-*.iml
-*.ipr
-*.iws
-.idea/
+void main() {
+  runApp(const MyApp());
+}
 
-# The .vscode folder contains launch configuration and tasks you configure in
-# VS Code which you may wish to be included in version control, so this line
-# is commented out by default.
-#.vscode/
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
-# Flutter/Dart/Pub related
-**/doc/api/
-**/ios/Flutter/.last_build_id
-.dart_tool/
-.flutter-plugins
-.flutter-plugins-dependencies
-.packages
-.pub-cache/
-.pub/
-/build/
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'ApniNotes',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: const HomePage(),
+    );
+  }
+}
 
-# Symbolication related
-app.*.symbols
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
-# Obfuscation related
-app.*.map.json
-
-# Android Studio will place build artifacts here
-/android/app/debug
-/android/app/profile
-/android/app/release
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: const Text('ApniNotes Frontend')),
+      body: const Center(
+        child: Text(
+          'Target: Android & iPhone',
+          style: TextStyle(fontSize: 24),
+        ),
+      ),
+    );
+  }
+}
